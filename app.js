@@ -29,17 +29,19 @@ app.get("/work", function(req, res) {
   res.render("list", {listTitle: "Work list", newListItem: workItems});
 });
 
-app.post("/work", function(req, res) {
-
-  let work = req.body.newItem;
-  workItems.push(work);
-  res.redirect("/work");
-});
 
 app.post("/", function(req, res) {
-   let item = req.body.newItem;
-   items.push(item);
-  res.redirect("/");
+
+let item = req.body.newItem;
+  if(req.body.button === "Work"){
+    workItems.push(item);
+    res.redirect("/work");
+  }
+  else{
+    items.push(item);
+    res.redirect("/");
+  }
+
 });
 
 app.listen(3000, function() {
