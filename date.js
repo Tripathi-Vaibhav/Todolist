@@ -1,8 +1,7 @@
 //jshint esversion: 6
 
-module.exports.getDate = getDate;
+exports.getDate = function() {
 
-function getDate() {
   let date = new Date();
   let options = {
     day: "numeric",
@@ -10,7 +9,5 @@ function getDate() {
     month: "long"
   };
 
-  let day = date.toLocaleString("en-US", options);
-
-  return day;
-}
+return date.toLocaleString("en-US", options);
+};
