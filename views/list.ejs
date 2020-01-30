@@ -5,6 +5,17 @@
     <title></title>
   </head>
   <body>
-    <h1> Hey its <%= Day %></h1>
+    <h1> <%= Day %> </h1>
+
+    <ul>
+      <li> Breakfast</li>
+      <li> Lunch </li>
+      <li> Dinner</li>
+    </ul>
+
+    <form action="/" method="post">
+      <input type="text" name="newItem" placeholder="Add">
+      <button type="submit" name="button">+</button>
+    </form>
   </body>
 </html>
